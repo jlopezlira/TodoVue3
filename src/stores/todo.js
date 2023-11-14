@@ -5,6 +5,14 @@ export const useTodo = defineStore('todo', {
   state: () => ({
     todos: []
   }),
+  persist: {
+    enabled: true,
+    strategies: [
+      {
+        storage: window.localStorage
+      }
+    ]
+  },
   getters: {
     doneTodos: (state) => state.todos.filter((todo) => todo.done),
     pendingTodos: (state) => state.todos.filter((todo) => !todo.done),
@@ -12,12 +20,16 @@ export const useTodo = defineStore('todo', {
   },
   actions: {
     add(task) {
-      this.todos.push({
-        id: uuidv4(),
-        task,
-        done: false,
-        createdAt: new Date()
-      })
+      const newTodos = [
+        {
+          id: uuidv4(),
+          task,
+          done: false,
+          createdAt: Date.now()
+        },
+        ...this.todos
+      ]
+      this.todos = newTodos
     },
     remove(id) {
       this.todos = this.todos.filter((todo) => todo.id !== id)

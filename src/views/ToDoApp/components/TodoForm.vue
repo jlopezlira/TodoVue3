@@ -3,6 +3,7 @@
         <input
             type="text"
             v-model="task"
+            id="task"
             placeholder="Add a new task"
             class="transition-all ease-in delay-75 w-full p-2 rounded border-0 focus:outline-none focus:ring-2 bg-neutral-50 text-neutral-900 focus:ring-green-500 focus:border-transparent"
         />
@@ -30,5 +31,6 @@
         }
         store.add(formattedTask)
         toast.success('Task added!')
+        task.value = ''
     }
 </script>
