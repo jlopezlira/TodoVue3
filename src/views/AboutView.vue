@@ -15,21 +15,29 @@
         and maintaining innovative applications using JavaScript. My expertise lies primarily in
         frontend development, with a focus on ReactJS, React Native, and VueJS.
       </p>
-      <a class="externalLink" href="https://github.com/jlopezlira">@jlopezlira</a>
+      <a class="externalLink" target="_blank" href="https://github.com/jlopezlira">@jlopezlira</a>
     </section>
   </div>
 
   <h2 class="headline">🔧 Recommended IDE Setup</h2>
   <ul class="my-4 list-disc list-inside">
-    <li><a class="externalLink" href="https://code.visualstudio.com/">Visual Studio Code</a></li>
     <li>
-      <a class="externalLink" href="https://marketplace.visualstudio.com/items?itemName=Vue.volar"
+      <a class="externalLink" target="_blank" href="https://code.visualstudio.com/"
+        >Visual Studio Code</a
+      >
+    </li>
+    <li>
+      <a
+        class="externalLink"
+        target="_blank"
+        href="https://marketplace.visualstudio.com/items?itemName=Vue.volar"
         >Volar (and disable Vetur)</a
       >
     </li>
     <li>
       <a
         class="externalLink"
+        target="_blank"
         href="https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin"
         >TypeScript Vue Plugin (Volar)</a
       >
@@ -37,7 +45,9 @@
   </ul>
 
   <h2 class="headline">Customize configuration</h2>
-  <a class="externalLink" href="https://vitejs.dev/config/">Vite Configuration Reference</a>
+  <a class="externalLink" target="_blank" href="https://vitejs.dev/config/"
+    >Vite Configuration Reference</a
+  >
 
   <h2 class="headline">📦 Project setup</h2>
   <code class="code"> npm install </code>
@@ -83,4 +93,10 @@
     <li>vue-chartjs</li>
     <li>vue-router</li>
   </ul>
+  <a
+    href="https://github.com/jlopezlira/TodoVue3"
+    target="_blank"
+    class="p-4 rounded-md shadow-md bg-green-500 text-neutral-950 my-8 inline-block w-full text-center font-semibold text-md"
+  >This code is public and available on GitHub.
+  </a>
 </template>
