@@ -1,23 +1,22 @@
 import { defineStore } from 'pinia'
+import { v4 as uuidv4 } from 'uuid'
 
 export const useTodo = defineStore('todo', {
   state: () => ({
-    todos: [
-      { id: 1, task: 'Buy milk', done: false },
-      { id: 2, task: 'Buy eggs', done: true },
-      { id: 3, task: 'Buy bread', done: true }
-    ]
+    todos: []
   }),
   getters: {
     doneTodos: (state) => state.todos.filter((todo) => todo.done),
-    pendingTodos: (state) => state.todos.filter((todo) => !todo.done)
+    pendingTodos: (state) => state.todos.filter((todo) => !todo.done),
+    totalTodos: (state) => state.todos.length
   },
   actions: {
     add(task) {
       this.todos.push({
-        id: this.todos.length + 1,
+        id: uuidv4(),
         task,
-        done: false
+        done: false,
+        createdAt: new Date()
       })
     },
     remove(id) {

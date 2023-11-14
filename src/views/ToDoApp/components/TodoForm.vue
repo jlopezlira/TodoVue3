@@ -18,16 +18,18 @@
 <script setup>
     import { useTodo } from '@/stores/todo';
     import { ref, computed } from 'vue'
+    import { toast } from 'vue3-toastify';
 
     const store = useTodo();
     const task = ref('')
-    const isValid = computed(() => task.value.trim().length > 5)
+    const isValid = computed(() => task.value.trim().length > 3)
 
     const addTask = () => {
         const formattedTask = task.value.trim()
-        if (formattedTask.length < 5) {
+        if (formattedTask.length < 3) {
             return
         }
         store.add(formattedTask)
+        toast.success('Task added!')
     }
 </script>
