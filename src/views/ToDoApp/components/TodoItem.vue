@@ -36,30 +36,30 @@
 </template>
 
 <script setup>
-import { defineProps, computed } from 'vue'
-import { timeAgo } from '@/lib/utils'
-import { ClockIcon, TrashIcon } from '@heroicons/vue/24/outline'
-import { useTodo } from '@/stores/todo'
+  import { defineProps, computed } from 'vue'
+  import { timeAgo } from '@/lib/utils'
+  import { ClockIcon, TrashIcon } from '@heroicons/vue/24/outline'
+  import { useTodo } from '@/stores/todo'
 
-const store = useTodo()
-const props = defineProps({
-  id: String,
-  task: String,
-  createdAt: Number,
-  done: Boolean
-})
-const timeAgoComputed = computed(() => timeAgo(props.createdAt))
-const computedStatusClass = computed(() => {
-  return props.done
-    ? 'line-through text-neutral-500 dark:text-neutral-400'
-    : 'text-neutral-900 dark:text-neutral-50'
-})
+  const store = useTodo()
+  const props = defineProps({
+    id: String,
+    task: String,
+    createdAt: Number,
+    done: Boolean
+  })
+  const timeAgoComputed = computed(() => timeAgo(props.createdAt))
+  const computedStatusClass = computed(() => {
+    return props.done
+      ? 'line-through text-neutral-500 dark:text-neutral-400'
+      : 'text-neutral-900 dark:text-neutral-50'
+  })
 
-const handleDelete = () => {
-  store.remove(props.id)
-}
+  const handleDelete = () => {
+    store.remove(props.id)
+  }
 
-const handleDone = () => {
-  store.toggle(props.id)
-}
+  const handleDone = () => {
+    store.toggle(props.id)
+  }
 </script>
