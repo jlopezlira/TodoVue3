@@ -23,7 +23,6 @@
     const store = useTodo();
     const task = ref('')
     const isValid = computed(() => task.value.trim().length > 3)
-
     const addTask = () => {
         const formattedTask = task.value.trim()
         if (formattedTask.length < 3) {
